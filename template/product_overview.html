@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}商品概覽{% endblock title %}
+{% block headmessage %} 
+<div style='display: flex; justify-content: space-between; align-items: center;'>
+    <h3 style='font-family: 微軟正黑體;'>商品概覽</h3>
+    <button onclick="goBack()">回上頁</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</div>
+{% endblock headmessage %} 
+
+{% block content %} 
+{% for product in products %}
+<div class="card">
+    <div class="row no-gutters">
+        <div class="col-md-2">
+            <!-- 左側列放置圖像 -->
+            <img src="{{ product.photo }}" alt="Product Image" class="card-img">
+        </div>
+        <div class="col-md-8">
+            <!-- 右側是cardㄉ內容-->
+            <div class="card-body">
+                <h3 class="card-title">{{ product.name }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
