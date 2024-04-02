@@ -1,0 +1,16 @@
+from django.db import models
+
+class Post(models.Model):
+    name=models.CharField(max_length=200)
+    description=models.TextField(max_length=200)
+    #photo=models.ImageField(max_length=200)
+    price=models.CharField(max_length=200)
+    order=models.TextField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
+
+
+# Create your models here.
